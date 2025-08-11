@@ -1,0 +1,56 @@
+<header class="sticky-nav fixed w-full top-0 z-50 bg-white bg-opacity-80 backdrop-blur-md shadow-md transition-shadow">
+    <nav class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo with icon -->
+            <div class="flex items-center space-x-2">
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
+                    <i class="fas fa-apple-alt text-green-600 text-xl"></i>
+                </span>
+                <span class="text-2xl font-extrabold text-green-700 tracking-tight">{{ logo }}</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-6 items-center">
+                <a [routerLink]="['/home/content']"
+                   routerLinkActive="text-green-600 font-bold border-b-2 border-green-600"
+                   class="text-gray-700 hover:text-green-600 px-2 py-1 transition-colors duration-200">Accueil</a>
+                <a [routerLink]="['/home/aliments']"
+                   routerLinkActive="text-green-600 font-bold border-b-2 border-green-600"
+                   class="text-gray-700 hover:text-green-600 px-2 py-1 transition-colors duration-200">Aliments</a>
+                <a [routerLink]="['/home/calculateCalories']"
+                   routerLinkActive="text-green-600 font-bold border-b-2 border-green-600"
+                   class="text-gray-700 hover:text-green-600 px-2 py-1 transition-colors duration-200">Calculateur de calories</a>
+                <a [routerLink]="['/home/login']"
+                   routerLinkActive="text-green-600 font-bold border-b-2 border-green-600"
+                   class="text-gray-700 hover:text-green-600 px-2 py-1 transition-colors duration-200">Connexion</a>
+                <!-- Profile/avatar placeholder -->
+                <span class="ml-4 inline-flex items-center justify-center w-9 h-9 rounded-full bg-gray-100 shadow">
+                    <i class="fas fa-user text-gray-400"></i>
+                </span>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-green-600 focus:outline-none transition">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+             class="hidden md:hidden mt-4 pb-2 rounded-xl shadow-lg bg-white bg-opacity-95
+                    transition-all duration-300 ease-in-out transform scale-y-0 origin-top"
+             [class.open]="isMobileMenuOpen"
+             [ngClass]="{'scale-y-100 opacity-100 visible': isMobileMenuOpen, 'scale-y-0 opacity-0 invisible': !isMobileMenuOpen}">
+            <a [routerLink]="['/home/content']"
+               class="block py-2 px-4 text-green-600 font-semibold hover:bg-green-50 rounded transition-colors duration-200">Accueil</a>
+            <a [routerLink]="['/home/aliments']"
+               class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded transition-colors duration-200">Aliments</a>
+            <a [routerLink]="['/home/calculateCalories']"
+               class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded transition-colors duration-200">Calculateur de calories</a>
+            <a [routerLink]="['/home/login']"
+               class="block py-2 px-4 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded transition-colors duration-200">Connexion</a>
+        </div>
+    </nav>
+</header>

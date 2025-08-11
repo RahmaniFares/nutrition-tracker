@@ -1,0 +1,80 @@
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center"></div>
+    <div class="hero-overlay absolute inset-0 bg-gradient-to-br from-green-700/60 via-green-400/30 to-transparent"></div>
+    <div class="container mx-auto px-6 z-10">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Mangez mieux avec la nutrition tunisienne</h1>
+            <p class="text-xl text-gray-100 mb-8 drop-shadow">Explorez nos aliments et repas traditionnels riches en saveurs et bienfaits.</p>
+            <button class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                Explorer les aliments
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-gradient-to-b from-green-50 via-white to-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Nos fonctionnalités</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1 -->
+            <div class="feature-card bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-green-100">
+                <div class="text-green-600 text-4xl mb-4">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Recherche facile</h3>
+                <p class="text-gray-600">Trouvez rapidement des aliments tunisiens dans notre base de données complète.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-card bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-green-100">
+                <div class="text-green-600 text-4xl mb-4">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Suivi nutritionnel</h3>
+                <p class="text-gray-600">Suivez vos apports en calories, protéines et autres nutriments essentiels.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-card bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-green-100">
+                <div class="text-green-600 text-4xl mb-4">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Repas traditionnels</h3>
+                <p class="text-gray-600">Découvrez les recettes et valeurs nutritionnelles des plats tunisiens typiques.</p>
+            </div>
+            <!-- Feature 4 -->
+            <div class="feature-card bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-green-100">
+                <div class="text-green-600 text-4xl mb-4">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">Plan nutritionnel</h3>
+                <p class="text-gray-600">Créez votre propre plan alimentaire personnalisé (disponible pour les membres).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Foods Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Aliments populaires</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div *ngFor="let food of foods" class="food-card bg-white/90 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-green-50">
+                <img [src]="food.image" [alt]="food.name" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">{{ food.name }}</h3>
+                    <div class="flex justify-between text-sm text-gray-600 mb-3">
+                        <span><i class="fas fa-fire text-red-400 mr-1"></i> {{ food.kcal }} kcal</span>
+                        <span><i class="fas fa-dumbbell text-blue-400 mr-1"></i> {{ food.protein }}g protéines</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">{{ food.description }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <button class="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold py-2 px-8 rounded-full shadow transition-all duration-300 hover:scale-105">
+                Voir tous les aliments
+            </button>
+        </div>
+    </div>
+</section>
